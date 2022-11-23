@@ -14,3 +14,7 @@ chrome_options.add_argument('--disable-dev-shm-usage')
 
 # Creating WebDriver instance
 wd = webdriver.Chrome(service=Service(ChromeDriverManager().install()),options=chrome_options)
+
+wd.get("https://www.wikipedia.org/")
+assert "Wikipedia" in wd.title
+print(wd.page_source)
